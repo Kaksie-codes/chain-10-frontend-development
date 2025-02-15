@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        form{
+            background-color: aquamarine;
+            width: 35%;
+            /* margin-inline: auto; */
+            margin: 0 auto;
+            margin-top: 70px;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        form div{
+            /* background-color: brown; */
+            margin-top: 10px;
+        }
+        .w-full{
+            width: 100%;
+            padding: 10px;
+        }
+        button{
+            padding: 10px 30px;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            margin-inline: auto;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="">Name</label> <br>
+            <input type="text" placeholder="Enter your name" class="w-full">
+        </div>
+        <div>
+            <label for="">Email</label> <br>
+            <input type="email" placeholder="Enter your email" class="w-full">
+        </div>
+        <div>
+            <p>What do you want to study?</p>
+            <input type="radio" id="blockchain" checked name="course-choice">
+            <label for="blockchain">Blockchain Dev</label> <br>
+            <input type="radio" id="ui-ux"  name="course-choice">
+            <label for="ui-ux">UI/UX design</label> <br>
+            <input type="radio" id="trading"  name="course-choice">
+            <label for="trading">Trading</label> <br>
+            <input type="radio" id="editing" name="course-choice">
+            <label for="editing">Video Editing</label> <br>
+            <input type="radio" id="design" name="course-choice">
+            <label for="design">Graphics design</label>
+        </div>
+        <div>
+            <p>Who are your favourite tutors</p>
+            <input type="checkbox" id="empato" checked>
+            <label for="empato">Mr Empato</label> <br>
+            <input type="checkbox" id="bernard">
+            <label for="bernard">Brother Bernard</label> <br>
+            <input type="checkbox" id="kelly">
+            <label for="kelly">Tech Kelly</label> <br>
+            <input type="checkbox" id="timora">
+            <label for="timora">Timora</label> <br>
+        </div>
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+</body>
+</html>
