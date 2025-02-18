@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #141414;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+            color: white;
+            font-family: "Poppins", serif;
+        }
+        article{
+            background-color: #1F1F1F;
+            width: 350px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 20px;
+        }
+        img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .spans{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;      
+            margin-top: 15px;      
+        }
+        h1{
+            margin: 20px 0 10px 0;
+        }
+        p.location{
+            color: #B8D554;
+            margin-bottom: 15px;
+            font-family: "Grechen Fuemen", serif;
+        }
+        span{
+            background-color: #333333;
+            padding-block: 12px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <img src="https://images.pexels.com/photos/1820919/pexels-photo-1820919.jpeg?auto=compress&cs=tinysrgb&w=600" alt="A woman">
+        <div>
+            <h1>Jessicca Randall</h1>
+            <p class="location">London, United Kingdom</p>
+        </div>
+        <p>"Front-end Developer and Avid Reader"</p>
+        <div class="spans">
+            <span>GitHub</span>
+            <span>Frontend Mentor</span>
+            <span>LinkedIn</span>
+            <span>Twitter</span>
+            <span>Instagram</span>
+        </div>
+    </article>
+</body>
+</html>
