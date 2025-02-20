@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        section{
+            width: 70vw;
+            height: 450px;
+            gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            padding: 5px;
+            box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.3);
+
+
+
+        }
+        div{
+            display: grid;
+            place-items: center;
+            border-radius: 20px;
+            font-size: 35px;            
+        }
+        div:nth-child(1){
+            background-color: #FD7B47;
+            grid-row: 4/5;
+            grid-column: 1/6;
+        }
+        div:nth-child(2){
+            background-color: #47FC93;
+            grid-row: 2/3;
+            grid-column: 3/5;
+        }
+        div:nth-child(3){
+            background-color: #B7FC47;
+            grid-column: 1/2;
+            grid-row: 1/4;
+        }
+        div:nth-child(4){
+            background-color: #46ABFD;
+            grid-row: 3/4;
+            grid-column: 2/4;
+        }
+        div:nth-child(5){
+            background-color: #F948CD;
+            grid-row: 3/4;
+            grid-column: 4/5;
+        }
+        div:nth-child(6){
+            background-color: #47F1FE;
+            grid-row: 1/2;
+            grid-column: 2/4;
+        }
+        div:nth-child(7){
+            background-color: #5A670B;
+            grid-column: 4/6;
+            grid-row: 1/2;
+        }
+        div:nth-child(8){
+            background-color: #044557;
+            grid-row: 2/4;
+            grid-column: 5/6;
+        }
+        div:nth-child(9){
+            background-color: #F30C1E;
+            grid-row: 2/3;
+            grid-column: 2/3;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </section>
+</body>
+</html>
