@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(195, 195, 216);
+            min-height: 100vh;       
+            display: grid;
+            place-items: center;     
+        }
+        section{
+            display: grid;
+            background-color: beige;
+            grid-template-columns: repeat(4, 1fr);
+            height: 70vh;
+            width: 70vw;
+            gap: 10px;
+        }
+        div{
+            background-color: rgb(159, 42, 165);
+        }
+
+        /* For Tablets */
+        @media screen and (max-width: 1024px){
+            section{
+                grid-template-columns: repeat(3, 1fr);
+            }
+            div{
+                background-color: red;
+            }
+        }
+
+        /* for small tablets */
+        @media screen and (max-width: 768px){
+            section{
+                grid-template-columns: repeat(2, 1fr);
+            }
+            div{
+                background-color: blue;
+            }
+            
+        }
+
+        /* For Phones */
+        @media screen and (max-width: 480px){
+            section{
+                grid-template-columns: repeat(1, 1fr);
+            }
+            div{
+                background-color: green;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+</html>
