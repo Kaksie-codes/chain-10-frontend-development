@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
             padding: 0;
@@ -20,7 +21,7 @@
             height: 450px;
             gap: 10px;
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(1, 1fr);
             padding: 5px;
             box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.3);
         }
@@ -32,52 +33,98 @@
         }
         div:nth-child(1){
             background-color: #FD7B47;
-            grid-row: 4/5;
-            grid-column: 1/6;
         }
         div:nth-child(2){
             background-color: #47FC93;
-            grid-row: 2/3;
-            grid-column: 3/5;
         }
         div:nth-child(3){
             background-color: #B7FC47;
-            grid-column: 1/2;
-            grid-row: 1/4;
         }
         div:nth-child(4){
             background-color: #46ABFD;
-            grid-row: 3/4;
-            grid-column: 2/4;
         }
         div:nth-child(5){
             background-color: #F948CD;
-            grid-row: 3/4;
-            grid-column: 4/5;
         }
         div:nth-child(6){
             background-color: #47F1FE;
-            grid-row: 1/2;
-            grid-column: 2/4;
         }
         div:nth-child(7){
             background-color: #5A670B;
+        }
+        div:nth-child(8){
+            background-color: #044557;           
+        }
+        div:nth-child(9){
+            background-color: #F30C1E;          
+        }
+        @media screen and (min-width: 480px) {
+            section{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            section{
+                grid-template-columns: repeat(5,1fr);
+            }
+            div:nth-child(1){            
+            grid-row: 4/5;
+            grid-column: 1/6;
+        }
+        div:nth-child(2){            
+            grid-row: 2/3;
+            grid-column: 3/5;
+        }
+        div:nth-child(3){           
+            grid-column: 1/2;
+            grid-row: 1/4;
+        }
+        div:nth-child(4){          
+            grid-row: 3/4;
+            grid-column: 2/4;
+        }
+        div:nth-child(5){           
+            grid-row: 3/4;
+            grid-column: 4/5;
+        }
+        div:nth-child(6){           
+            grid-row: 1/2;
+            grid-column: 2/4;
+        }
+        div:nth-child(7){            
             grid-column: 4/6;
             grid-row: 1/2;
         }
-        div:nth-child(8){
-            background-color: #044557;
+        div:nth-child(8){            
             grid-row: 2/4;
             grid-column: 5/6;
         }
-        div:nth-child(9){
-            background-color: #F30C1E;
+        div:nth-child(9){            
             grid-row: 2/3;
             grid-column: 2/3;
         }
+    }
+
+    button{
+        display: flex;
+        border: 3px solid gray;
+        padding: 10px;
+        gap: 10px;
+        border-radius: 15px;
+        background-color: white;
+    }
+    button i{      
+        color: orange;
+    }
     </style>
 </head>
 <body>
+    <button>
+        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+        Add to Cart
+    </button>
+    
     <section>
         <div>1</div>
         <div>2</div>
