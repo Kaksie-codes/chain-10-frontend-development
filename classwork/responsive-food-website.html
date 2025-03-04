@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Food Website</title>
+
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+        :root{
+            --orange-color: #B4543E;
+            --gray-color: #FCF8F5;
+            --pink-color: #b43e6d;
+            --blue-color: #4a3eb4;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: var(--gray-color);
+            font-family: "Manrope", sans-serif;
+            overflow-x: hidden;
+        }
+        section{                       
+            height: fit-content;
+            margin-inline: auto;
+            /* margin: 0 auto; */
+            /* width: 90%;
+            max-width: 1200px; */
+            /* background-color: red; */
+            min-height: 100vh;
+            width: min(90%, 1200px);   
+            display: grid;
+            gap: 30px;
+            grid-template-columns:2fr 1fr ;    
+            margin-top: 40px;     
+            /* display: flex; */
+        }
+        main{
+            /* background-color: blueviolet; */
+            /* width: 100%; */
+            /* flex: 2; */
+            /* flex-basis: 65%; */
+            /* flex-grow: 2; */
+        }
+        aside{
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            /* flex: 1; */
+            /* flex-basis: 35%; */
+            /* flex-grow: 1; */
+        }
+        aside h1{
+            color: var(--orange-color);
+        }
+        aside div{
+            width: 200px;
+            height: 200px;
+            /* background-color: aqua; */
+            overflow: hidden;
+            margin-inline: auto;
+        }
+        aside div img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1);
+            transition: transform 0.5s ease-in-out;
+        }
+        aside div img:hover{
+            transform: scale(1.2);
+        }
+        aside p{
+            text-align: center;            
+        }
+        div[data="grid-wrap"]{            
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .img-wrap{
+            width: 100%;
+            height: 200px;
+            /* overflow: hidden; */
+            border-radius: 20px;
+            position: relative;
+            /* background-color: #4a3eb4; */
+        }
+        .img-wrap img{
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+        .img-wrap button{
+            position: absolute;
+            bottom: -20px;
+            z-index: 20;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 15px;
+            padding: 10px 20px;
+            border: 1px solid gray;
+            background-color: white;
+            display: flex;
+            gap: 10px;
+            white-space: nowrap;   
+            outline: none;         
+        }
+        .food-card span{
+            margin-top: 20px;
+            display: inline-block;
+            color: #ABA09C;
+            font-size: 12px;
+        }
+        .food-card p{
+            font-size: 12px;
+            color: var(--orange-color);
+        }
+
+        @media screen and (max-width: 800px) {
+            section{
+                grid-template-columns: 1fr ; 
+            }
+            aside{
+                order: -1;
+            }
+            div[data="grid-wrap"]{
+                grid-template-columns: repeat(2, 1fr);
+            } 
+        }
+
+        @media screen and (max-width: 480px) {
+            div[data="grid-wrap"]{
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <main>
+            <h1>Desserts</h1>
+            <div class="grid-wrap" data="grid-wrap">
+                <div class="food-card">
+                    <div class="img-wrap">
+                        <img src="./assets/waffles.jpeg" alt="meal 1">
+                        <button>
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i> 
+                            Add to Cart
+                        </button>
+                    </div>
+                    <span>Waffle</span>
+                    <h4>Waffle with berries</h4>
+                    <p>$6.50</p>
+                </div>
+                <div class="food-card">
+                    <div class="img-wrap">
+                        <img src="./assets/bruleee.jpg" alt="meal 1">
+                        <button>
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i> 
+                            Add to Cart
+                        </button>
+                    </div>
+                    <span>Waffle</span>
+                    <h4>Waffle with berries</h4>
+                    <p>$6.50</p>
+                </div>
+                <div class="food-card">
+                    <div class="img-wrap">
+                        <img src="./assets/macaron.JPG" alt="meal 1">
+                        <button>
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i> 
+                            Add to Cart
+                        </button>
+                    </div>
+                    <span>Waffle</span>
+                    <h4>Waffle with berries</h4>
+                    <p>$6.50</p>
+                </div>
+                <div class="food-card">
+                    <div class="img-wrap">
+                        <img src="./assets/taramisu.jpg" alt="meal 1">
+                        <button>
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i> 
+                            Add to Cart
+                        </button>
+                    </div>
+                    <span>Waffle</span>
+                    <h4>Waffle with berries</h4>
+                    <p>$6.50</p>
+                </div>
+                <div class="food-card">
+                    <div class="img-wrap">
+                        <img src="./assets/waffles.jpeg" alt="meal 1">
+                        <button>
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i> 
+                            Add to Cart
+                        </button>
+                    </div>
+                    <span>Waffle</span>
+                    <h4>Waffle with berries</h4>
+                    <p>$6.50</p>
+                </div>
+                <div class="food-card">
+                    <div class="img-wrap">
+                        <img src="./assets/waffles.jpeg" alt="meal 1">
+                        <button>
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i> 
+                            Add to Cart
+                        </button>
+                    </div>
+                    <span>Waffle</span>
+                    <h4>Waffle with berries</h4>
+                    <p>$6.50</p>
+                </div>
+                <div class="food-card">
+                    <div class="img-wrap">
+                        <img src="./assets/waffles.jpeg" alt="meal 1">
+                        <button>
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i> 
+                            Add to Cart
+                        </button>
+                    </div>
+                    <span>Waffle</span>
+                    <h4>Waffle with berries</h4>
+                    <p>$6.50</p>
+                </div>
+                <div class="food-card">
+                    <div class="img-wrap">
+                        <img src="./assets/waffles.jpeg" alt="meal 1">
+                        <button>
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i> 
+                            Add to Cart
+                        </button>
+                    </div>
+                    <span>Waffle</span>
+                    <h4>Waffle with berries</h4>
+                    <p>$6.50</p>
+                </div>
+                <div class="food-card">
+                    <div class="img-wrap">
+                        <img src="./assets/waffles.jpeg" alt="meal 1">
+                        <button>
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i> 
+                            Add to Cart
+                        </button>
+                    </div>
+                    <span>Waffle</span>
+                    <h4>Waffle with berries</h4>
+                    <p>$6.50</p>
+                </div>
+               
+            </div>
+        </main>
+        <aside>
+            <h1>Your Cart (0)</h1>
+            <div>
+                <img src="./assets/cake-2.png" alt="">
+            </div>
+            <p>Your Added Items will Appear here</p>
+        </aside>
+    </section>
+</body>
+</html>
