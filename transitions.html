@@ -16,19 +16,23 @@
             height: 100vh;
             display: grid;
             place-items: center;
-            background-color: green;
+           
         }
         .box-1{
             width: 200px;
             height: 200px;
             background-color: blue;  
-            border-radius: 0;          
-            /* transition: 5s ease-out 2s background-color, width 5s linear, height 5s linear, border-radius 5s linear; */
-            /* transition-property: background-color;
-            transition-duration: 5s;
-            transition-timing-function: ease-out;
-            transition-delay: 2s; */
-            transition: all 5s  linear 5s;
+            color: white;
+            border-radius: 0;  
+            display: grid;
+            place-items: center;   
+            font-size: 30px;     
+            /* transition: 5s ease-out  background-color, width 5s linear, height 3s linear, border-radius 5s linear; */
+            /* transition-property: background-color, border-radius, height, width; */
+            /* transition-duration: 5s; */
+            /* transition-timing-function: ease-in; */
+            /* transition-delay: 2s; */
+            transition: all 5s  linear 1s;
             
         }
         .box-1:hover{
@@ -36,6 +40,8 @@
             width: 500px;
             height: 500px;
             border-radius: 50%;
+            color: yellow;
+            font-size: 100px;
         }
         /* .box-1:hover{
             background-color: red;
@@ -59,7 +65,8 @@
     </style>
 </head>
 <body>
-    <div class="box-1"></div>
+    <div class="box-1">Color</div>
+    
     <!-- <div class="box-2" tabindex="0"></div> -->
 </body>
 </html>
