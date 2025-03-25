@@ -3,6 +3,7 @@
     --primary-color: #FA4A0C;
     --secondary-color: #000000;
     --light-gray-color: #737373;
+    --mild-gray-color: #f6f6f6;
     --light-color: #fff;
 }
 *{
@@ -13,11 +14,19 @@
 body{
     font-family: "Montserrat", sans-serif;
     background-color: var(--light-color);
+    overflow-x: hidden !important;
 }
 
+/* Utility Classes */
 .container{
     width: min(90%, 1200px);    
     margin: 0 auto;
+}
+.line{
+    height: 3px;
+    width: 80%;
+    background-color: #e4e4e4;
+    margin-inline: auto;
 }
 
 header{
@@ -105,7 +114,9 @@ nav .nav-links{
 section.hero-section{    
     height: calc(100vh - 80px);
     text-align: center;
+    position: relative;
 }
+
 .hero-section .container{
     display: grid;
     place-items: center;
@@ -137,7 +148,7 @@ section.hero-section{
 .btn{
     font-size: 24px;
     border-radius: 30px;
-    padding: 10px 20px;
+    padding: 10px 40px;
     border: none;
     outline: none;
     cursor: pointer;
@@ -156,4 +167,126 @@ section.hero-section{
     gap: 20px;
     justify-content: center;
     flex-direction: column;
+}
+
+@media (min-width: 768px){
+    section.hero-section{
+        background-image: url("./assets/bg-image.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .hero-section .container > div{
+        margin-top: -10%;
+    }
+    .hero-section span, .hero-section h1{
+        color: var(--light-color);
+    }
+    .hero-section h1{
+        font-size: 58px;
+        line-height: 80px;
+        max-width: 860px;
+        font-family: "Poppins", sans-serif;
+    }
+    .hero-section p{
+        color: var(--mild-gray-color);
+    }
+    .btn-group{
+        flex-direction: row;
+    }
+    .btn-secondary{
+        border: 1px solid var(--light-color);        
+        color: var(--light-color);
+    }
+}
+
+
+/* Phones section */
+.phone-section .container{    
+    margin-bottom: 50px;
+}
+.phone-section .phones{
+    width: 100%;
+    max-width: 500px;
+    margin-top: -70%;
+    margin-left: -10%;
+    z-index: 2;
+    position: relative;
+}
+
+@media (min-width: 768px) {   
+    .phone-section .phones{
+        margin-top: -18%;
+        /* margin-left: unset; */
+        margin-inline: auto !important;
+        display: grid;
+        place-items: center;
+    }
+}
+
+
+/* App works sectiion */
+.app-works{
+    margin-bottom: 50px;
+    text-align: center;
+    overflow-x: hidden !important;
+}
+.app-works .grid-wrap{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;    
+    position: relative;
+    /* overflow-x: hidden; */
+}
+.grid-wrap .phone-1{
+    width: 210%;
+    position: relative;
+    left: -40%;
+    order: 1;
+}
+.app-works h2{
+    color: var(--secondary-color);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    line-height: 36px;
+}
+.app-works span{
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.app-works h3{
+    font-size: 40px;
+    line-height: 57px;
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-top: 20px;
+}
+.app-works p{
+    font-weight: 500;
+    color: var(--light-gray-color);
+    font-size: 24px;
+    line-height: 38px;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .app-works{
+        text-align: left;
+    }
+    .app-works h2{
+        text-align: center;
+        font-size: 44px;
+    }
+    .app-works .grid-wrap{
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+    }
+    .grid-wrap .phone-1{
+        width: 100%;
+        left: unset;
+        order: -1;
+    }
 }
