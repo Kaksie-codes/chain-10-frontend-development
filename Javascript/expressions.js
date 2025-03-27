@@ -28,7 +28,10 @@ console.log(20 - 5)
 
 // e.g
 "Hello" + " " + "World";   // Concatenation, evaluates to "Hello World"
-console.log("Hello" + " " + "World")
+console.log("Hello " + "World")
+let word1 = "happy"
+let word2 = " birthday"
+console.log(1 + word2)
 
 // Logical Expressions:
 // Expressions that use logical operators to return boolean values (true or false).
@@ -38,16 +41,17 @@ console.log("Hello" + " " + "World")
 10 == 10;       // Equality, evaluates to true
 7 != 2;         // Not equal, evaluates to true
 
-console.log(7 != 2);
+console.log( 10 !== "10");
 
 
 // Assignment Expressions
 // Assigns a value to a variable.
 
 // e,g
-let x = 5;        // Assignment, x is now 5
+ x = 5;        // Assignment, x is now 5
+console.log({x});
 x = x + 10;          // Adds 10 to x, now x is 15
-console.log(x);
+console.log({x});
 
 // Comparison Expressions:
 // Expressions that compare two values and return a boolean (true or false).
@@ -63,7 +67,7 @@ console.log(x);
 // A compact form of an if-else statement.
 
 // e.g
-condition ? expression1 : expression2;
+// condition ? expression1 : expression2;
 let age = 18;
 let canVote = (age >= 18) ? "Yes" : "No";  // Evaluates to "Yes"
 
