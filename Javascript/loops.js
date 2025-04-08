@@ -8,12 +8,18 @@
 //     // code to be executed
 // }
 
-// for(let num = 10; num >= 0; num--){
+// for(let num = 0; num <= 10; num++){
 //     console.log(num);
 // }
 
-// for(let num = 3; num < 20; num+=3){
+// for(let num = 0; num <= 10; num+=2){
 //     console.log(num);
+// }
+
+// for(let num = 0; num <= 10; num++){
+//     if(num % 2 === 0){
+//         console.log(num);
+//     }
 // }
 
 // for(let num = 0; num < 20; num++){
@@ -37,7 +43,7 @@
   
 // let isShopOpen = true;
 
-// while(isShopOpen === true){
+// while(isShopOpen){
 //     console.log('Buy Bread');
 //     isShopOpen = false;
 // }
@@ -72,9 +78,18 @@
 // example
 let person = { 
     fname: "John", 
-    lname: "Doe", 
+    lname: "Doe",
+    "local govt": 'Uyo', 
     age: 25 
 };
+
+// console.log(person["local govt"])
+// console.log(person["fname"])
+
+// for(let prop in person) {
+//     console.log(prop + ": " + person[prop]);
+//     // console.log(`${prop}: ${person[prop]}`);
+// }
 
 
 // for (let prop in person) {
@@ -113,16 +128,16 @@ _name+='stella'
 // example
 let numbers = [1, 2, 3, 4, 5];
 
-// for (let thing of numbers) {
-//   console.log(thing);
-// }
+for (let thing of numbers) {
+  console.log(thing);
+}
 
 
 let dogs = ['german shepard', 'Terrier', 'ekuke']
 
-// for(let dog of dogs){
-//     console.log(dog);
-// }
+for(let dog of dogs){
+    console.log(dog);
+}
 
 // console.log(dogs.length);
 
