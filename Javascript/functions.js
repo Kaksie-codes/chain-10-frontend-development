@@ -9,18 +9,67 @@ function Greetings(){
 }
 
 
-Greetings();
+// for(let i = 0; i <=10; i++){
+//     Greetings();
+// }
+ 
+const sayHi = (firstName) => {
+    console.log(firstName)
+    console.log('Hello ' + firstName);   
+    console.log('how far ' + firstName);     
+    console.log('    ');  
+}
+// let name = "Gabriel"
+
+// sayHi('Gabriel')
+// sayHi('Esther')
+// alert('I am at home')
+let response = prompt('How old are you?')
+console.log({response})
+
+// const voterElegibility = (age) => {
+//     console.log({age})
+//     let isNotANumber = isNaN(age)
+//     if(isNotANumber){
+//         console.log('Invalid input')
+//         return
+//     }
+//     if(age >= 18){
+//         console.log("You are of Age and you are elegible to vote")
+//     }else{
+//         console.log('You are not of age, go back home')
+//     }
+// }
+const voterElegibility = (age) => {
+    console.log({age})
+    let isNotANumber = isNaN(age)
+    if(isNotANumber){
+        console.log('Invalid input')
+        return
+    }else{
+        if(age >= 18){
+            console.log("You are of Age and you are elegible to vote")
+        }else{
+            console.log('You are not of age, go back home')
+        }
+    }   
+}
+
+voterElegibility(response)
 
 const num3 = 10;
 
-function addNum(num1, num2){
-    // let num1 = 4;
-    // let num2 = 5;
-    const num3 = 50;
-    // console.log('result >>>>' + num1 + num2);
-    console.log(`result >>>>> ${num1 + num2}`);
-    // console.log(num3);
+function addNum(num1, num2){    
+    // console.log('result >>>> ' + (num1 + num2));
+    // console.log(`result >>>>> ${num1 + num2}`);  
+   return  num1 + num2 
 }
+
+// console.log(5 + 10)
+
+// let res = addNum(100, 10)
+// console.log({res})
+// addNum(1, 4)
 
 function example() {
     var x = 10;
@@ -34,15 +83,15 @@ function example() {
 
 // example();
 
-console.log(num3);
+// console.log(num3);
 // console.log(num4);
 // console.log(num1);
 
 // AddNum();
 // AddNum();
 // AddNum();
-addNum(5);
-addNum(50, 100);
+// addNum(5);
+// addNum(50, 100);
 
 // function substractNums(num1, num2){
 //     return num1 - num2;
@@ -55,10 +104,10 @@ var substractNums = (num1, num2) => {
     return num1 - num2;
 }
 
-let substractNums = (num1, num2) => {
-    return num1 + num2;
-}
+// let substractNums = (num1, num2) => {
+//     return num1 + num2;
+// }
 
 // let result = substractNums(7,5);
 let result = substractNums(7,5);
-console.log({result});
+// console.log({result});
