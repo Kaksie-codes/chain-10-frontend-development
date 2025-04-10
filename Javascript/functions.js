@@ -24,8 +24,8 @@ const sayHi = (firstName) => {
 // sayHi('Gabriel')
 // sayHi('Esther')
 // alert('I am at home')
-let response = prompt('How old are you?')
-console.log({response})
+// let response = prompt('How old are you?')
+// console.log({response})
 
 // const voterElegibility = (age) => {
 //     console.log({age})
@@ -40,22 +40,27 @@ console.log({response})
 //         console.log('You are not of age, go back home')
 //     }
 // }
-const voterElegibility = (age) => {
-    console.log({age})
-    let isNotANumber = isNaN(age)
-    if(isNotANumber){
-        console.log('Invalid input')
-        return
-    }else{
-        if(age >= 18){
-            console.log("You are of Age and you are elegible to vote")
-        }else{
-            console.log('You are not of age, go back home')
-        }
-    }   
-}
+// const voterElegibility = (age) => {
+//     console.log({age})
+//     let isNotANumber = isNaN(age)
+//     if(isNotANumber){
+//         console.log('Invalid input')
+//         return
+//     }else{
+//         if(age >= 0 && age <= 100){
+//             if(age >= 18){
+//                 console.log("You are of Age and you are elegible to vote")
+//             }else{
+//                 console.log('You are not of age, go back home')
+//             }
+//         }else{
+//             console.log('Invalid Age')
+//         }
+       
+//     }   
+// }
 
-voterElegibility(response)
+// voterElegibility(response)
 
 const num3 = 10;
 
@@ -64,6 +69,26 @@ function addNum(num1, num2){
     // console.log(`result >>>>> ${num1 + num2}`);  
    return  num1 + num2 
 }
+
+const person = {
+    name: "Adamu",
+    age: 45,
+    greet: function(){
+        console.log('Hello ' + this.name)
+    }
+}
+
+// person.greet()
+// person["greet"]()
+
+let randomNumber = Math.random()
+console.log({randomNumber})
+randomNumber = randomNumber * 10
+console.log({randomNumber})
+console.log({roundedNumber: Math.floor(randomNumber)})
+console.log(Math.floor(3.4))
+console.log(Math.ceil(3.4))
+console.log(Math.round(3.4))
 
 // console.log(5 + 10)
 
