@@ -5,7 +5,9 @@
 // There are two main ways to create an object:
 
 // 1.) Object Literal Notation:
-let vehicle = {};
+let vehicle = {
+  mileage: 1000
+};
 // console.log(vehicle);
 vehicle.brand = "Toyota";
 // console.log(vehicle);
@@ -14,33 +16,60 @@ vehicle["model"] = "Camry";
 // console.log(vehicle.model);
 // console.log(vehicle["model"]);
 
+const personalDetails = {};
+console.log(personalDetails);
+personalDetails["first name"] = 'Musa'
+console.log(personalDetails);
+personalDetails["last name"] = 'Peter'
+console.log(personalDetails);
+personalDetails["Country of Origin"] = 'Nigeria'
+console.log(personalDetails);
+
 const person = {
   name: "John",
   "his country": "United States",
   age: 30,
   profession: "Engineer",
   greet: function () {
-    console.log("Hello, my name is " + person.name);
+    console.log("Hello, my name is " + this.name + "and i am from " + this["his country"]);
   },
   drive: (carname) => {
-    console.log(carname + " Vroooooooooooooom...");
+    console.log("I am driving a " + carname );
   },
 };
 
-// person.greet();
+person.greet();
+person.drive("Lamborghini");
 // console.log(person);
 
+const calculate = (num1, num2, operation) => {
+  if(operation === 'addition'){
+    console.log("The result of the " + operation + " = " + (num1 + num2))
+  }else if(operation === "subtraction"){
+    console.log(`The result of the ${operation} = ${num1 - num2}`)
+  }else if(operation === "multiplication"){
+    console.log(`The result of the ${operation} = ${num1 * num2}`)
+  }else if(operation === 'division'){
+    console.log(`The result of the ${operation} = ${num1 / num2}`)
+  }else{
+    console.log(`The result of the ${operation} = ${num1 % num2}`)
+  }
+}
+
+calculate(5, 7, "addition")
+calculate(5, 7, "subtraction")
+calculate(5, 7, "modulus")
 // person.drive('Tesla');
 
 // 2.)  Using new Object() Syntax:
 
 const car = new Object();
-// console.log(car);
+console.log(car);
 car.brand = "Toyota";
 car.model = "Corolla";
 car.year = 2020;
 
-  // console.log(car);
+  console.log(car);
 
 //   Accessing Object Properties
 //   You can access object properties in two ways:
@@ -149,7 +178,7 @@ const obj1 = { x: 1, q: 2 };
 const obj2 = { y: 5, z: 3 };
 
 const merged = { ...obj1, ...obj2 }; // `y` will be overwritten by obj2's `y`
-console.log(merged);  // Outputs: { x: 1, y: 5, z: 3 }
+// console.log(merged);  // Outputs: { x: 1, y: 5, z: 3 }
 
 // Adding or Overwriting Properties in an Object
 // You can add or modify properties while spreading:
@@ -164,7 +193,7 @@ const person4 = { name: "John", age: 30, city: "New York" };
 const deletedPerson = { ...person4 };
 delete deletedPerson.city;
 
-console.log(deletedPerson);
+// console.log(deletedPerson);
 
 // Object Methods
 // There are built-in methods to manipulate objects.
@@ -172,15 +201,15 @@ console.log(deletedPerson);
 // Object.keys()
 // Returns an array of the object’s keys.
 const citizen = { name: "John", age: 30 };
-console.log(Object.keys(citizen));
+// console.log(Object.keys(citizen));
 
 // Object.values()
 // Returns an array of the object’s values.
-console.log(Object.values(citizen));
+// console.log(Object.values(citizen));
 
 // Object.entries()
 // Returns an array of key-value pairs.
-console.log(Object.entries(citizen));
+// console.log(Object.entries(citizen));
 
 // this Keyword
 // In JavaScript, this refers to the current object the code is being written in.
@@ -226,7 +255,7 @@ const myObj = { a: 1 };
 Object.seal(myObj);
 myObj.a = 2; // Allowed
 myObj.b = 3; // Not allowed
-console.log(myObj);
+// console.log(myObj);
 
 //Class Work
 // 1.) create an Object called myStudent
