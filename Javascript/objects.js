@@ -17,13 +17,13 @@ vehicle["model"] = "Camry";
 // console.log(vehicle["model"]);
 
 const personalDetails = {};
-console.log(personalDetails);
+// console.log(personalDetails);
 personalDetails["first name"] = 'Musa'
-console.log(personalDetails);
+// console.log(personalDetails);
 personalDetails["last name"] = 'Peter'
-console.log(personalDetails);
+// console.log(personalDetails);
 personalDetails["Country of Origin"] = 'Nigeria'
-console.log(personalDetails);
+// console.log(personalDetails);
 
 const person = {
   name: "John",
@@ -31,15 +31,27 @@ const person = {
   age: 30,
   profession: "Engineer",
   greet: function () {
-    console.log("Hello, my name is " + this.name + "and i am from " + this["his country"]);
+    console.log("Hello, my name is " + person.name + " and i am from " + person["his country"]);
   },
   drive: (carname) => {
     console.log("I am driving a " + carname );
   },
 };
 
-person.greet();
-person.drive("Lamborghini");
+const company = {
+  title:"chaindustry",
+  description: "Web3 Company",
+  age: 4,
+  founder: "Emmanuel Patrick",
+  announce: () => {
+    console.log(`my name is ${company.founder}, the founder of ${company.title}, a ${company.description} company, my company is ${company.age} years old`)
+  }
+};
+
+company.announce();
+
+// person.greet();
+// person.drive("Lamborghini");
 // console.log(person);
 
 const calculate = (num1, num2, operation) => {
@@ -56,20 +68,20 @@ const calculate = (num1, num2, operation) => {
   }
 }
 
-calculate(5, 7, "addition")
-calculate(5, 7, "subtraction")
-calculate(5, 7, "modulus")
+// calculate(5, 7, "addition")
+// calculate(5, 7, "subtraction")
+// calculate(5, 7, "modulus")
 // person.drive('Tesla');
 
 // 2.)  Using new Object() Syntax:
 
 const car = new Object();
-console.log(car);
+// console.log(car);
 car.brand = "Toyota";
 car.model = "Corolla";
 car.year = 2020;
 
-  console.log(car);
+  // console.log(car);
 
 //   Accessing Object Properties
 //   You can access object properties in two ways:
@@ -79,19 +91,25 @@ car.year = 2020;
 
 // Bracket Notation (useful when keys are dynamic or have spaces):
   // console.log(person['age']);  // Output: 30
+  person.age = 400
+  // console.log(person['age']);  // Output: 30
 
 //   Methods
 //   A method is a function that is a property of an object.
 //   In the above example, greet is a method of the person object.
 // person.drive('Toyota');
+// person["drive"]("Benz");
 
 // Destructuring Objects
 // Destructuring allows you to unpack values from objects into distinct variables.
 
 // const number = person.age;
-const { age:number, drive: driver, greet  } = person;
+const {age:number, name, greet: hailUser} = person
+console.log({number, name,})
+// console.log({number})
+// const { age:number, drive: driver, greet  } = person;
 // driver('mercedes benz');
-// greet();
+hailUser();
 
 // const { age : my_Age, name, drive } = person;
 // const age = person.age;
@@ -117,15 +135,16 @@ const student = {
 // console.log(english);
 
   const { scores } = student;
+  console.log({scores})
   // const { math, english } = scores;
 const {  scores: { english, math }} = student;
-// console.log(english);
+console.log({english, math});
 
   // console.log(math);    // Outputs: 90
   // console.log(english); // Outputs: 85
 
 const myVehicle = {
-  brand: "Toyota",
+  manufacturer: "Toyota",
   model: "Hilux",
   colors: ["Blue", "Green", "red", "Yellow", ["Pink", "brown"], {animals: 'Turkeys and Chickens'}],
   isAvailable: true,
@@ -134,13 +153,13 @@ const myVehicle = {
     props: {
       electric: {
         batterySize: 10000,
-        chargers: ["10W", "20W", "50W", [2, [2, 4.5, {cook: () => {console.log("You are cooked bro!")}}]]],
+        charging_stations: ["10W", "20W", "50W", [2, [2, 4.5, {cook: () => {console.log("You are cooked bro!")}}]]],
       },
     },
   },
 };
-
-// myVehicle.engineStats.props.electric.chargers[3][1][2].cook();
+console.log(myVehicle['colors'][5]);
+myVehicle.engineStats.props.electric.charging_stations[3][1][2].cook();
 
 const { engineStats: {props: {electric: {chargers}}}, colors} = myVehicle;
 // console.log(chargers)
