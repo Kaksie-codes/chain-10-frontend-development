@@ -17,8 +17,8 @@
 // 2.) Writing flexible functions that can be customized with different behaviors.
 // 3.) Abstracting over common patterns of computation (e.g., looping over arrays).
 
-function greet(name) {   
-    console.log(`Hello, ${name}!`);
+function greet(nickname) {   
+    console.log(`Hello, ${nickname}!`);
 }
 
 // greet('Buhari');
@@ -27,16 +27,34 @@ const sayMyName = (name) => {
 }
 
 function logGreeting(myFunc, name) {
-    sayMyName(name);
+    // sayMyName(name);
     myFunc(name);
 }
+
+// console.log([1, 3, 4, 5].length)
   
 // We pass the 'greet' function as an argument to 'logGreeting'
-// logGreeting(greet, "Tyronne"); // Output: Hello, tyronne!
+logGreeting(greet, "Tyronne"); // Output: Hello, tyronne!
+logGreeting(sayMyName, "Tyronne"); // Output: My name is tyronne!
 
-// function Add(num1, num2){
-//     return num1 + num2;
-// }
+const hof = (param1, param2) => {
+  param2(param1)
+}
+
+const arrayLenghtCalculator = (array) => {
+    console.log(`The length of this array is ${array.length}`)
+}
+
+hof([1,3, 5,6, 5, 6, 6, 7, 4, 3], arrayLenghtCalculator);
+
+
+function Add(num1, num2){
+    console.log(num1 + num2);
+}
+
+let sum = Add;
+
+// sum(1,2)
 
 // let answer = Add(1, 2);
 
