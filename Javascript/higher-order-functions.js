@@ -34,8 +34,8 @@ function logGreeting(myFunc, name) {
 // console.log([1, 3, 4, 5].length)
   
 // We pass the 'greet' function as an argument to 'logGreeting'
-logGreeting(greet, "Tyronne"); // Output: Hello, tyronne!
-logGreeting(sayMyName, "Tyronne"); // Output: My name is tyronne!
+// logGreeting(greet, "Tyronne"); // Output: Hello, tyronne!
+// logGreeting(sayMyName, "Tyronne"); // Output: My name is tyronne!
 
 const hof = (param1, param2) => {
   param2(param1)
@@ -45,7 +45,7 @@ const arrayLenghtCalculator = (array) => {
     console.log(`The length of this array is ${array.length}`)
 }
 
-hof([1,3, 5,6, 5, 6, 6, 7, 4, 3], arrayLenghtCalculator);
+// hof([1,3, 5,6, 5, 6, 6, 7, 4, 3], arrayLenghtCalculator);
 
 
 function Add(num1, num2){
@@ -60,15 +60,18 @@ let sum = Add;
 
 // console.log({answer});
 
-function multiplier(factor) {
+function multiplier() {
     return function(number) {
-      return number * factor;
+      return number * 2;
+      console.log('tech')
     };
   }
   
-  const multiplyByTwo = multiplier(2);
+  const multiplyByTwo = multiplier();
 
-//   console.log(multiplyByTwo(5)); // Output: 10
+  // console.log(multiplyByTwo); // Output: [Function]
+
+  // console.log(multiplyByTwo(5)); // Output: 10
 
   
 //   Callbacks  
@@ -104,9 +107,11 @@ function getUserName(callback) {
 // }
 // numbers.forEach((number) => multiplyBy(number));
 
-// numbers.forEach(function(number){
-//     console.log(number * 2);    
-// });
+// numbers.forEach(function(num) {console.log(num * 2)} )
+
+// for(let num = 0; num < numbers.length; num++){
+//   console.log(numbers[num] * 2)
+// }
 
 // numbers.forEach((number) => console.log(number * 2));
 
@@ -131,10 +136,10 @@ function getUserName(callback) {
 // D. reduce
 // Purpose: The reduce method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
 // Use Case: It’s used to accumulate values (e.g., summing up numbers, finding the product of numbers, etc.).
-// const numbers = [1, 2, 3, 4];
-// const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+const numbers = [{name: "Nsikak", age: 10}, {name: "Chad", age: 25}, {name: "Tyronne", age: 30}];
+const _sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue.age, 0);
 
-// console.log(sum); // Output: 10
+console.log(_sum); // Output: 10
 
 
 // E. find
@@ -168,13 +173,17 @@ function getUserName(callback) {
 
 // Using a Custom Higher-Order Function with a Callback
 function repeatAction(n, action) {
+   let myArray = []
     for (let i = 0; i < n; i++) {
-      action(i);
+      action(i, myArray);
+      console.log(myArray);
     }
+    console.log(myArray);
   }
   
-  // repeatAction(3, (i) => {
-  //   console.log(`This is iteration ${i + 1}`);
+  // repeatAction(5, (index, array) => {
+  //   // console.log(`This is iteration ${index + 1}`);
+  //   array.push(index + 1)
   // });
 
 
