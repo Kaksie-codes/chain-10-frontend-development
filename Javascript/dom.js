@@ -34,6 +34,14 @@
 const selectedH1 = document.getElementById('title');
 console.log(selectedH1);
 
+const selectedHeadings = document.querySelectorAll('#title')
+console.log('selected', selectedHeadings[0])
+selectedHeadings[0].innerText = 'Ikpa road';
+
+const selectedH2 = document.querySelector('h2#title')
+console.log('myH2', selectedH2.innerText)
+selectedH2.style.color = 'green'
+selectedH2.innerText = "Hi Chaindustry"
 // 2.) document.getElementsByClassName()
 // Usage: Retrieves a collection of elements with the specified class name..
 const headers = document.getElementsByClassName('main-header');
