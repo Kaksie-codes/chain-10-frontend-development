@@ -29,6 +29,7 @@ console.log(button);
 
 // const handleClick = () => {
 //     alert("Button was clicked!");
+//     console.log('i was clicked')
 // }
 
 // button.addEventListener("click", handleClick);
@@ -85,20 +86,21 @@ console.log(button);
 // C.) Form Events
 // 1.) submit: Triggered when a form is submitted.
 const form = document.getElementById("myForm");
-// form.addEventListener("submit", function(event) {
-//   event.preventDefault(); // Prevents the form from being submitted
-//   alert("Form submitted!");
-// });
+form.addEventListener("submit", function(event) {
+  console.log(event)
+  event.preventDefault(); // Prevents the form from being submitted
+  // alert("Form submitted!");
+});
 
 // 2.) change: Triggered when the value of an input element changes.
-// const input = document.getElementById("name");
+const input = document.getElementById("name");
 // console.log(input);
-// // console.log("Value: " + input.value);
+// console.log("Value: " + input.value);
 
-// input.addEventListener("input", function(e) {
-//   console.log(e.target);  
-//   console.log("Input value changed: " + e.target.value);  
-// });
+input.addEventListener("input", function(e) {
+  console.log(e);  
+  console.log("Input value changed: " + e.target.value);  
+});
 
 // 3.) focus: Triggered when an element (like an input) gains focus.
 // const input = document.getElementById("myInput");
@@ -132,15 +134,15 @@ const form = document.getElementById("myForm");
 
 
 // Removing Event Listeners
-function handleClick() {
-    alert("Button clicked!");
-  }
+// function handleClick() {
+//     alert("Button clicked!");
+//   }
   
   
-  button.addEventListener("click", handleClick);
+  // button.addEventListener("click", handleClick);
   
   // Later, remove the event listener
-  button.removeEventListener("click", handleClick);
+  // button.removeEventListener("click", handleClick);
   
   
 

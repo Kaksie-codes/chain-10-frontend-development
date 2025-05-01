@@ -32,38 +32,38 @@
 
 // document.getElementById()
 const selectedH1 = document.getElementById('title');
-console.log(selectedH1);
+// console.log(selectedH1);
 
 const selectedHeadings = document.querySelectorAll('#title')
-console.log('selected', selectedHeadings[0])
+// console.log('selected', selectedHeadings[0])
 selectedHeadings[0].innerText = 'Ikpa road';
 
 const selectedH2 = document.querySelector('h2#title')
-console.log('myH2', selectedH2.innerText)
+// console.log('myH2', selectedH2.innerText)
 selectedH2.style.color = 'green'
 selectedH2.innerText = "Hi Chaindustry"
 // 2.) document.getElementsByClassName()
 // Usage: Retrieves a collection of elements with the specified class name..
 const headers = document.getElementsByClassName('main-header');
-console.log(headers);
+// console.log(headers);
 
 // 3.) document.getElementsByTagName()
 // Usage: Retrieves a collection of elements with the specified tag name..
 
 const myParagraph = document.getElementsByTagName('p');
-console.log(myParagraph);
+// console.log(myParagraph);
 
 // 4.) document.querySelector()
 // Usage: Retrieves the first element that matches a specified CSS selector.
 const mainheaderElement = document.querySelector('h3.main-header');
-console.log(mainheaderElement);
+// console.log(mainheaderElement);
 mainheaderElement.innerText = 'Happy Hour';
 mainheaderElement.style.color = 'Red'
 
 // 5.) document..querySelectorAll()
 // Usage: Retrieves all elements that match a specified CSS selector
 const allSpecialHeadings = document.querySelectorAll('h3.main-header');
-console.log(allSpecialHeadings);
+// console.log(allSpecialHeadings);
 
 // const AfricanTExt = document.querySelector('span h3');
 const AfricanTExt = document.querySelector('section.box h3');
@@ -71,7 +71,7 @@ AfricanTExt.style.color = 'green';
 
 
 const targetDiv = document.getElementById('box');
-console.log(targetDiv);
+// console.log(targetDiv);
 
 targetDiv.style.backgroundColor = 'blue';
 targetDiv.style.height = '300px';
@@ -105,7 +105,7 @@ targetDiv.style.placeContent = 'center';
     // console.log(element);
     // console.log(element.innerHTML);
 
-    // element.innerHTML = `<p>Hidden text</p><p>Visible text</p>`;
+    // element.innerHTML = `<img src="https://blog.autochek.africa/wp-content/uploads/2019/06/Luxury-Cars-in-Nigeria-1.jpg" alt="an Image"/>`;
     // console.log(element);
     // console.log(element.innerHTML);
 
@@ -118,7 +118,7 @@ targetDiv.style.placeContent = 'center';
     // const element = document.getElementById('example');
     // console.log(element.textContent);
 
-    // element.textContent = `<p>Hidden text</p><p>Visible text</p>`
+    // element.textContent = `<img src="https://blog.autochek.africa/wp-content/uploads/2019/06/Luxury-Cars-in-Nigeria-1.jpg" alt="an Image"/>`;
 
 // 3. innerText
 // Purpose: Gets or sets the visible text content of an element and its descendants.
@@ -131,5 +131,5 @@ targetDiv.style.placeContent = 'center';
     console.log(element.innerText);
 
     // const word = document.getElementById('heading')
-    // word.innerText = `<p>Hidden text</p>
-    //         <p>Visible text</p>`
+    element.innerText = `<p>Hidden text</p>
+            <p>Visible text</p>`
