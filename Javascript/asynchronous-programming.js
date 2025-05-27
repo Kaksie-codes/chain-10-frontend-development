@@ -134,7 +134,7 @@ const cookNoodles = () => {
 
 }
 
-cookNoodles();
+// cookNoodles();
 
 
 // Callback Hell makes code harder to follow. Promises and async/await can help solve this problem.
@@ -153,7 +153,7 @@ cookNoodles();
 
 // const myPromise = new Promise((resolve, reject) => {
 //   // Simulate an asynchronous operation
-//   const success = false;
+//   const success = !true;
 
 //   setTimeout(() => {
 //     if (success) {
@@ -231,7 +231,9 @@ button.addEventListener('click', () => sayClicked('Musa'))
 //     })
 //     .then(() => {
 //       console.log('I just placed a sauce-pan on fire');
-//       return wait(1000);
+//       return new Promise((resolve, reject) => {
+//         setTimeout(() => reject(), 1000)
+//       });
 //     })
 //     .then(() => {
 //       console.log('I have added some water to the pot');
@@ -292,35 +294,48 @@ button.addEventListener('click', () => sayClicked('Musa'))
 
 // fetchUserData();
 
-// const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-// const doings = async () => {
-//   console.log('Decide what you want to chop');
-//   await wait(2000);
+const wait = (ms) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(), ms)
+  });
+}
 
-//   console.log('I want to eat Indomie noodles');
-//   await wait(3000);
 
-//   console.log('I just bought three cartons of Indomie noodles');
-//   await wait(1000);
+const doings = async () => {
+  try {
+    console.log('Decide what you want to chop');
+    await wait(2000);
 
-//   console.log('I just placed a sauce-pan on fire');
-//   await wait(1000);
+    console.log('I want to eat Indomie noodles');
+    await wait(3000);
 
-//   console.log('I have added some water to the pot');
-//   await wait(4000);
+    console.log('I just bought three cartons of Indomie noodles');
+    await wait(1000);
 
-//   console.log('The water is boiling');
-//   await wait(1000);
+    console.log('I just placed a sauce-pan on fire');
+    await wait(1000);
 
-//   console.log('I successfully added my noodles to the pan');
-//   await wait(5000);
+    console.log('I have added some water to the pot');
+    await wait(4000);
 
-//   console.log('My Delicious pan of noodles is ready');
-//   await wait(1000);
+    console.log('The water is boiling');
+    await wait(1000);
 
-//   console.log('I have hurriedly and successfully finished all my Noodles');
-// };
+    console.log('I successfully added my noodles to the pan');
+    await wait(5000);
+
+    console.log('My Delicious pan of noodles is ready');
+    await wait(1000);
+
+    console.log('I have hurriedly and successfully finished all my Noodles');
+  } catch (error) {
+    console.error('Something went wrong:', error);
+    return; // Exit the function if there's an error
+    
+  }
+  
+};
 
 // doings();
 
@@ -351,15 +366,15 @@ button.addEventListener('click', () => sayClicked('Musa'))
 
 // handlePromiseWithError();
 
-const wait = (ms) => new Promise((resolve, reject) => {
-  setTimeout(() => {
-    if (ms < 0) {
-      reject('Invalid delay time'); // Simulate an error condition
-    } else {
-      resolve();
-    }
-  }, ms);
-});
+// const wait = (ms) => new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     if (ms < 0) {
+//       reject('Invalid delay time'); // Simulate an error condition
+//     } else {
+//       resolve();
+//     }
+//   }, ms);
+// });
 
 // const doings = async () => {
 //   try {
@@ -410,26 +425,29 @@ const wait = (ms) => new Promise((resolve, reject) => {
 const productsContainer = document.getElementById('products-container');
 
 // Fetching a list of products from FakeStore API
-// fetch('https://fakestoreapi.com/products')
-//   .then((response) => response.json())
-//   .then((products) => {
-//     // console.log('FakeStore API Products:', products);
-//     products.forEach((product) => {
-//       const { category, description, image, price, title} = product;
-//       productsContainer.innerHTML += `
-//       <div>
-//             <h1>Title: ${title}</h1>
-//             <h2>Category: ${category}</h2>
-//             <img src=${image} alt=${title}>
-//             <p>Price: ${price}</p>
-//             <p>Description: ${description}</p>
-//             <button>Add to Cart</button>
-//         </div>
-//     `
-//     })
+fetch('https://fakestoreapi.com/products')
+  .then((response) => {
+    console.log('Response:', response);
+    return response.json();
+  })
+  .then((products) => {
+    console.log('FakeStore API Products:', products);
+    products.forEach((product) => {
+      const { category, description, image, price, title} = product;
+      productsContainer.innerHTML += `
+      <div>
+            <h1>Title: ${title}</h1>
+            <h2>Category: ${category}</h2>
+            <img src=${image} alt=${title}>
+            <p>Price: ${price}</p>
+            <p>Description: ${description}</p>
+            <button>Add to Cart</button>
+        </div>
+    `
+    })
     
-//   })
-//   .catch((error) => console.error('Error:', error));
+  })
+  .catch((error) => console.error('Error:', error));
 
 // Fetching a single product from FakeStore API
 // fetch('https://fakestoreapi.com/products/1')
